@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Main{
     public static void main (String[] args){
-        String[] palabras = {"encebollado","fritada","guatita"};
+        String[] palabras = {"encebollado","fritada","guatita","hornado","encocado","ceviche"};
         String palabra = palabras[(int)(Math.random() * palabras.length)];
         char[] palabraAdivinada = new char[palabra.length()];
         boolean juegoTerminado = false;
@@ -12,7 +12,8 @@ public class Main{
         }
         while (!juegoTerminado) {
             System.out.println("Palabra: " + String.valueOf(palabraAdivinada));
-            System.out.println("Intentos restantes: " + (6 - intentos));
+            System.out.println("Intentos restantes: " + (7 - intentos));
+            System.out.println("La palabra se relaciona con platos tipicos del ecuador");
             System.out.print("Ingresa una letra: ");
             char letra = scanner.next().charAt(0);
 
@@ -27,8 +28,7 @@ public class Main{
                 intentos++;
             }
 
-            // Verificar si el juego ha terminado
-            if (intentos >= 6) {
+            if (intentos >= 7) {
                 System.out.println("¡Perdiste! La palabra era: " + palabra);
                 juegoTerminado = true;
             } else if (String.valueOf(palabraAdivinada).equals(palabra)) {
