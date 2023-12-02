@@ -23,6 +23,18 @@ public class Main{
                     letraAdivinada = true;
                 }
             }
+            if (!letraAdivinada) {
+                intentos++;
+            }
+
+            // Verificar si el juego ha terminado
+            if (intentos >= 6) {
+                System.out.println("¡Perdiste! La palabra era: " + palabra);
+                juegoTerminado = true;
+            } else if (String.valueOf(palabraAdivinada).equals(palabra)) {
+                System.out.println("¡Ganaste! Has adivinado la palabra: " + palabra);
+                juegoTerminado = true;
+            }
         }
     }
 }
